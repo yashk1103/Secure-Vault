@@ -259,6 +259,4 @@ python test_crypto_utils.py
 3. Write comprehensive tests for new features
 4. Update documentation for API changes
 
-## License
 
-This project is for educational purposes. Use at your own risk in production environments.
