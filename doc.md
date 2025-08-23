@@ -1,3 +1,5 @@
+JNI implementation [## Jni working (changes made to core program)]
+
 ## First Implementation
 
 ## **1. PROBLEM UNDERSTANDING**
@@ -462,8 +464,8 @@ STEP 7r: Compare hash == new_hash → integrity_verified
 
 • **Keys copied through multiple function calls**
 
-- [step4_result = step4_generateKey();](vscode-file://vscode-app/d:/coding/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-browser/workbench/workbench.html) - Copy 1
-- [step5_result = step5_encrypt(..., step4_result, ...);](vscode-file://vscode-app/d:/coding/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-browser/workbench/workbench.html) - Copy 2
+- [step4_result = step4_generateKey();] - Copy 1
+- [step5_result = step5_encrypt(..., step4_result, ...);] - Copy 2
 - Parameter passing creates additional copies
 - All copies remain until function scope ends
 
@@ -522,7 +524,7 @@ STEP 7r: Compare hash == new_hash → integrity_verified
 
 • **Key regeneration without cleanup**
 
-- [step3r_generateKey()](vscode-file://vscode-app/d:/coding/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-browser/workbench/workbench.html) has same issues as encryption
+- [step3r_generateKey()] has same issues as encryption
 - Creates key, returns copy, doesn't wipe original
 - Decryption keys persist in memory
 
